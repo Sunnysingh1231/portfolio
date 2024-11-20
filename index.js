@@ -1,7 +1,30 @@
 let typingText = new Typed("#text", {
-    strings: ["A Java Developer", "A Programmer"],
+    strings: ["A Java Developer", "A Backend Programmer"],
     loop: true,
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 1000
+    typeSpeed: 100,  
+    backSpeed: 60,  
+    backDelay: 1200, 
+    startDelay: 500, 
+    showCursor: true, 
+    cursorChar: "|",
+
 })
+
+let section = document.querySelectorAll("section");
+let navLink = document.querySelectorAll("header nav a");
+
+window.onscroll = ()=>{
+    section.forEach(sec =>{
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
+
+        if(top>= offset && top < offset+height){
+            navLink.forEach(links=>{
+                links.classList.remove('active');
+                document.querySelector("header nav a[href*=" + id +"]").classList.add("active");
+            })
+        }
+    })
+}
