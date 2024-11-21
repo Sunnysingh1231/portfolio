@@ -51,6 +51,10 @@ body{
 .header>a:hover{
     color:var(--second-bg-color);
 }
+#menu_icon{
+    display: none;
+    cursor: pointer;
+}
 .home{
     height: 100vh;
     display: flex;
@@ -539,3 +543,64 @@ body{
     font-size: 1.6rem;
 
 }
+
+@media(max-width: 1200px){
+    html{
+        font-size: 80%;
+    }
+}
+@media(max-width: 1000px){
+    .header{
+        padding: 2rem 4%;
+    }
+    section{
+        padding: 10rem 4% 2rem;
+    }
+    .home{
+        padding: 0 4%;
+    }
+    .footer{
+        padding: 2rem 4%;
+    }
+}
+@media(max-width:750px){
+    #menu_icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    }
+    .navbar .active{
+        transition-delay: .5s;
+        left: 0;
+    }
+    .navbar .active_navbar{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: yellow;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        z-index: -1;
+        transition: .25s ease;
+    }
+
+    .navbar .active .active_navbar{
+        transition-delay: .25s;
+        left: 0;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+
+    }
+}
+
