@@ -1,5 +1,5 @@
 let typingText = new Typed("#text", {
-    strings: ["A Java Developer", "A Backend Programmer"],
+    strings: ["A Java Developer", "A Backend Programmer."],
     loop: true,
     typeSpeed: 100,  
     backSpeed: 60,  
@@ -30,7 +30,7 @@ window.onscroll = ()=>{
 }
 
 let menuIcon = document.querySelector("#menu_icon");
-let navBar = document.querySelector("navbar");
+let navBar = document.querySelector(".navbar");
 
 menuIcon.onclick = ()=>{
     menuIcon.classList.toggle("fa-x");
