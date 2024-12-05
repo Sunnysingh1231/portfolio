@@ -36,3 +36,22 @@ menuIcon.onclick = ()=>{
     menuIcon.classList.toggle("fa-x");
     navBar.classList.toggle("active");
 }
+
+let read_more_btn = document.getElementById("read_more_btn");
+let p = document.getElementsByClassName("hide_about")
+read_more_btn.onclick=()=>{
+    let a= p[0];
+    let b= p[1];
+    let c= p[2];
+    let d= p[3];
+    a.classList.toggle("showhy")
+    a.classList.remove("hide_about")
+    b.classList.toggle("showhy")
+    b.classList.remove("hide_about")
+    c.classList.toggle("showhy")
+    c.classList.remove("hide_about")
+    d.classList.toggle("showhy")
+    d.classList.remove("hide_about")
+    console.log("bnm");
+    
+}
