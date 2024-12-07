@@ -35,6 +35,8 @@ body{
 .header>a{
     font-weight: 1000;
     font-size: 60px;
+    color:var(--second-bg-color);
+    transition: .5s;
 }
 #menu_icon{
     font-size: 25px;
@@ -44,13 +46,14 @@ body{
     color:#fff;
     font-weight: 400;
     font-size: 2rem;
-    transition: .5s;
+    transition: .6s;
 }
 .navbar a:hover, .navbar .active{
     color: var(--nav-bar-text-color);
 }
+
 .header>a:hover{
-    color:var(--second-bg-color);
+    color: var(--nav-bar-text-color);
 }
 #menu_icon{
     display: none;
@@ -61,7 +64,6 @@ body{
     display: flex;
     align-items: center;
     padding: 0 10%;
-    /* background: url(/WhatsApp\ Image\ 2024-11-20\ at\ 6.39.27\ PM.jpeg); */
     background-size: cover;
     background-position: center;
 }
@@ -218,11 +220,27 @@ body{
     height: 100%;
     background: transparent;
     /* border: 2px solid red; */
-    transition: .8s;
+    transition: .4s;
+    justify-content: space-between;
+
 }
+.imgHover>div{
+    position: absolute;
+    width: 80%;
+    height: 85%;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+}
+.imgHover>div>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .imgHover:hover{
-    background: #2400f0;
-    opacity: .5;
+    background: #606060;
+    opacity: .2;
 }
 
 .about{
@@ -245,9 +263,9 @@ body{
 }
 .about_img{
     position: relative;
-    width: 180px;
-    height: 190px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,6 +293,8 @@ body{
 
 .about_cont{
     text-align: center;
+    /* border: 2px solid red; */
+
 }
 .about_cont h3{
     font-size: 30px;
@@ -286,9 +306,13 @@ body{
     display: flex;
 }
 .about_cont .hide_about{
-    display: none;
+    position: absolute;
+    z-index: -1;
+    transition:linear 2s ;
+    opacity: 0;
 }
 .showhy{
+    transition: 2s;
     display: block;
 }
 .about_cont p i{
@@ -298,11 +322,10 @@ body{
 }
 .btn_box.btns{
     display: inline-block;
-    /* width: 0px; */
 }
-.btn_box.btns a::before{
-    background: red;
-} 
+.btns_color{
+    color: red;
+}
 
 .education{
     padding-top: 120px;
@@ -316,13 +339,8 @@ body{
 .education .education-row{
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    /* flex-wrap: wrap; */
     gap: 50px;
-    /* border: 2px solid red; */
     margin: 0px 20px;
-    
-
-
 }
 .education-column{
     flex: 1 1 10px;
@@ -624,12 +642,17 @@ form .btn-box button:hover{
 .footer_text p{
     font-size: 1.6rem;
 }
+
 @media(max-width: 1200px){
     html{
         font-size: 80%;
     }
     .skill .skill_row{
         width: 950px;
+    }
+    .imgHover>div{
+        width:100%;
+        right: -80px;
     }
 }
 @media(max-width: 1000px){
@@ -648,10 +671,19 @@ form .btn-box button:hover{
     .skill .skill_row{
         width: 850px;
     }
+    .imgHover>div{
+        width: 100%;
+        right: -80px;
+    }
 }
 @media(max-width: 900px){
     .skill .skill_row{
         width: 750px;
+    }
+    .imgHover>div{
+        width: 110%;
+        height: 80%;
+        right: -80px;
     }
 }
 @media(max-width: 810px){
@@ -670,8 +702,13 @@ form .btn-box button:hover{
     .skill .skill_row{
         width: 600px;
     }
+    .imgHover>div{
+        width: 125%;
+        height: 75%;
+        right: -80px;
+    }
 }
-@media(max-width:777px){
+@media(max-width:750px){
     #menu_icon{
         display: block;
     }
@@ -731,8 +768,11 @@ form .btn-box button:hover{
         font-weight: 1000;
         font-size: 40px;
     }
+    .imgHover{
+        display: none;
+    }
 }
-@media(max-width:420px){
+@media(max-width:425px){
     .header>a{
         font-weight: 1000;
         font-size: 30px;

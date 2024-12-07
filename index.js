@@ -29,15 +29,9 @@ window.onscroll = ()=>{
     })
 }
 
-let menuIcon = document.querySelector("#menu_icon");
-let navBar = document.querySelector(".navbar");
 
-menuIcon.onclick = ()=>{
-    menuIcon.classList.toggle("fa-x");
-    navBar.classList.toggle("active");
-}
 
-let read_more_btn = document.getElementById("read_more_btn");
+let read_more_btn = document.getElementsByClassName("read_more_btn")[0];
 let p = document.getElementsByClassName("hide_about")
 read_more_btn.onclick=()=>{
     let a= p[0];
@@ -52,6 +46,15 @@ read_more_btn.onclick=()=>{
     c.classList.remove("hide_about")
     d.classList.toggle("showhy")
     d.classList.remove("hide_about")
-    console.log("bnm");
-    
+    read_more_btn.innerText = "Read less";
+
+}
+
+let menuIcon = document.querySelector("#menu_icon");
+let navBar = document.querySelector(".navbar");
+
+menuIcon.onclick = ()=>{
+    menuIcon.classList.toggle("fa-x");
+    navBar.classList.toggle("active");
+    read_more_btn.classList.toggle("btns_color");
 }
